@@ -16,23 +16,19 @@ async def help_cb(c, m):
     await m.answer()
 
     # help text
-    help_text = """**Yᴏᴜ ɴᴇᴇᴅ Hᴇʟᴘ?? 🧐**
+    help_text = """**Yardıma İhtiyacın mı Var?**
 
-★ Jᴜsᴛ sᴇɴᴅ ᴍᴇ ᴛʜᴇ ғɪʟᴇs ɪ ᴡɪʟʟ sᴛᴏʀᴇ ғɪʟᴇ ᴀɴᴅ ɢɪᴠᴇ ʏᴏᴜ sʜᴀʀᴇ ᴀʙʟᴇ ʟɪɴᴋ
+★ Bana Depolamam Gereken Dosyayı Gönder Bende Sana Ulaşabilmen İçin Link Göndereyim
 
-**Yᴏᴜ ᴄᴀɴ ᴜsᴇ ᴍᴇ ɪɴ ᴄʜᴀɴɴᴇʟ ᴛᴏᴏ 😉**
+**Beni Gruplarda Kullanabilirsin**
 
-★ Mᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ᴡɪᴛʜ ᴇᴅɪᴛ ᴘᴇʀᴍɪssɪᴏɴ. Tʜᴀᴛs ᴇɴᴏᴜɢʜ ɴᴏᴡ ᴄᴏɴᴛɪɴᴜᴇ ᴜᴘʟᴏᴀᴅɪɴɢ ғɪʟᴇs ɪɴ ᴄʜᴀɴɴᴇʟ ɪ ᴡɪʟʟ ᴇᴅɪᴛ ᴀʟʟ ᴘᴏsᴛs ᴀɴᴅ ᴀᴅᴅ sʜᴀʀᴇ ᴀʙʟᴇ ʟɪɴᴋ ᴜʀʟ ʙᴜᴛᴛᴏɴs
-
-**Hᴏᴡ ᴛᴏ ᴇɴᴀʙʟᴇ ᴜᴘʟᴏᴀᴅᴇʀ ᴅᴇᴛᴀɪʟs ɪɴ ᴄᴀᴘᴛɪᴏɴ**
-
-★ Usᴇ /mode ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴄʜᴀɴɢᴇ ᴀɴᴅ ᴀʟsᴏ ʏᴏᴜ ᴄᴀɴ ᴜsᴇ`/mode channel_id` ᴛᴏ ᴄᴏɴᴛʀᴏʟ ᴄᴀᴘᴛɪᴏɴ ғᴏʀ ᴄʜᴀɴɴᴇʟ ᴍsɢ."""
+★ Beni Kanal veya Grupta Mesaj Düzenleme Yetkisiyle Yönetici Yap. İşte Bu Kadar Artık Tüm Gönderileri Düzenleyecek ve Gönderilere Paylaşılabilir Bağlantı Butonları Ekleyeceğim."""
 
     # creating buttons
     buttons = [[
-            InlineKeyboardButton('Hᴏᴍᴇ 🏕', callback_data='home'),
-            InlineKeyboardButton('Aʙᴏᴜᴛ 📕', callback_data='about')],[
-            InlineKeyboardButton('Cʟᴏsᴇ 🔐', callback_data='close')
+            InlineKeyboardButton('Anasayfa 🏕', callback_data='home'),
+            InlineKeyboardButton('Bilgi 📕', callback_data='about')],[
+            InlineKeyboardButton('Çıkış 🔐', callback_data='close')
         ]]
 
     # editing as help message
@@ -59,10 +55,10 @@ async def about_cb(c, m):
 
 #**⚜ Mʏ ɴᴀᴍᴇ : FɪʟᴇSᴛᴏʀᴇBᴏᴛ**\n
 #**🔸Vᴇʀꜱɪᴏɴ :** `3.0.1`\n
-#**🔹Sᴏᴜʀᴄᴇ :** [Cʟɪᴄᴋ Hᴇʀᴇ 🥰](https://github.com/avipatilpro/FileStoreBot)\n
-#**🔸GitHub :** [Fᴏʟʟᴏᴡ](https://GitHub.com/avipatilpro)\n
-#**🔹Dᴇᴠᴇʟᴏᴘᴇʀ :** [Aᴠɪsʜᴋᴀʀ Pᴀᴛɪʟ](https://telegram.me/Avishkarpatil)\n
-#**🔸Lᴀꜱᴛ ᴜᴘᴅᴀᴛᴇᴅ :** [[ 11-ᴊᴜʟʏ-21 ] 04:35 PM](https://telegram.me/AvishkarPatil)
+#**🔹Sᴏᴜʀᴄᴇ :** [Cʟɪᴄᴋ Hᴇʀᴇ 🥰](https://t.me/trbotlistesi)\n
+#**🔸GitHub :** [Fᴏʟʟᴏᴡ](https://t.me/trbotlistesi)\n
+#**🔹Dᴇᴠᴇʟᴏᴘᴇʀ :** [Aᴠɪsʜᴋᴀʀ Pᴀᴛɪʟ](https://t.me/trbotlistesi)\n
+#**🔸Lᴀꜱᴛ ᴜᴘᴅᴀᴛᴇᴅ :** [[ 11-ᴊᴜʟʏ-21 ] 04:35 PM](https://t.me/trbotlistesi)
 #"""
 
     about_text = f"""--**🍺 Mʏ Dᴇᴛᴀɪʟs:**--
@@ -71,22 +67,22 @@ async def about_cb(c, m):
 │
 ├**🔸Vᴇʀꜱɪᴏɴ :** `3.0.1`
 │
-├**🔹Sᴏᴜʀᴄᴇ :** [Cʟɪᴄᴋ Hᴇʀᴇ 🥰](https://github.com/avipatilpro/FileStoreBot)
+├**🔹Sᴏᴜʀᴄᴇ :** [Cʟɪᴄᴋ Hᴇʀᴇ 🥰](https://t.me/trbotlistesi)
 │
-├**🔸GitHub :** [Fᴏʟʟᴏᴡ](https://GitHub.com/avipatilpro)
+├**🔸GitHub :** [Fᴏʟʟᴏᴡ](https://t.me/trbotlistesi)
 │
-├**🔹Dᴇᴠᴇʟᴏᴘᴇʀ :** [Aᴠɪsʜᴋᴀʀ Pᴀᴛɪʟ](https://telegram.me/Avishkarpatil)
+├**🔹Dᴇᴠᴇʟᴏᴘᴇʀ :** [Aᴠɪsʜᴋᴀʀ Pᴀᴛɪʟ](https://t.me/trbotlistesi)
 │
-├**🔸Lᴀꜱᴛ ᴜᴘᴅᴀᴛᴇᴅ :** [[ 12-ᴊᴜʟʏ-21 ]](https://telegram.me/AvishkarPatil)
+├**🔸Lᴀꜱᴛ ᴜᴘᴅᴀᴛᴇᴅ :** [[ 12-ᴊᴜʟʏ-21 ]](https://t.me/trbotlistesi)
 │
 ╰─────────[ 😎 ]────────⍟
 """  
 
     # creating buttons
     buttons = [[
-            InlineKeyboardButton('Hᴏᴍᴇ 🏕', callback_data='home'),
-            InlineKeyboardButton('Hᴇʟᴘ 💡', callback_data='help')],[
-            InlineKeyboardButton('Cʟᴏsᴇ 🔐', callback_data='close')
+            InlineKeyboardButton('Anasayfa 🏕', callback_data='home'),
+            InlineKeyboardButton('Yardım 💡', callback_data='help')],[
+            InlineKeyboardButton('Çıkış 🔐', callback_data='close')
             ]]
 
     # editing message
@@ -117,4 +113,4 @@ async def delete_cb(c, m):
     chat_id = m.from_user.id if not DB_CHANNEL_ID else int(DB_CHANNEL_ID)
     message = await c.get_messages(chat_id, int(msg_id))
     await message.delete()
-    await m.message.edit("Dᴇʟᴇᴛᴇᴅ ғɪʟᴇs sᴜᴄᴄᴇssғᴜʟʟʏ Fʀᴏᴍ Dᴀᴛᴀʙᴀsᴇ👨‍✈️")
+    await m.message.edit("Dosya Veritabanından Başarıyla Silindi.")
