@@ -14,8 +14,8 @@ async def storefile(c, m):
     if IS_PRIVATE:
         if m.from_user.id not in AUTH_USERS:
             return
-    send_message = await m.reply_text("**Processing...**", quote=True)
-    media = m.document or m.video or m.audio or m.photo
+    send_message = await m.reply_text("**İşleniyor...**", quote=True)
+    media = m.video
     # text
     text = ""
     if not m.photo:
