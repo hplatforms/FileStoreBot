@@ -19,17 +19,17 @@ async def storefile(c, m):
     # text
     text = ""
     if not m.photo:
-        text = "--**🗃️ Fɪʟᴇ Dᴇᴛᴀɪʟs:**--\n\n"
-        text += f"📂 ** Fɪʟᴇ ɴᴀᴍᴇ :** `{media.file_name}`\n\n" if media.file_name else ""
-        text += f"🍃 **Mɪᴍᴇ Tʏᴘᴇ:** __{media.mime_type}__\n\n" if media.mime_type else ""
-        text += f"📦 **Fɪʟᴇ ꜱɪᴢᴇ :** __{humanbytes(media.file_size)}__\n\n" if media.file_size else ""
+        text = "--**🗃️ Dosya Detayı:**--\n"
+        text += f"📂 ** Dosya Adı :** `{media.file_name}`\n" if media.file_name else ""
+        text += f"🍃 **Mɪᴍᴇ Tʏᴘᴇ:** __{media.mime_type}__\n" if media.mime_type else ""
+        text += f"📦 **Dosya Boyutu :** __{humanbytes(media.file_size)}__\n" if media.file_size else ""
         if not m.document:
-            text += f"🎞 **Dᴜʀᴀᴛɪᴏɴ:** __{TimeFormatter(media.duration * 1000)}__\n\n" if media.duration else ""
+            text += f"🎞 **Süre:** __{TimeFormatter(media.duration * 1000)}__\n" if media.duration else ""
             if m.audio:
-                text += f"🎵 **Tɪᴛʟᴇ:** __{media.title}__\n\n" if media.title else ""
-                text += f"🎙 **Pᴇʀғᴏʀᴍᴇʀ:** __{media.performer}__\n\n" if media.performer else ""
-    text += f"**✏ Cᴀᴘᴛɪᴏɴ:** __{m.caption}__\n\n" if m.caption else ""
-    text += f"**🍁--Uᴘʟᴏᴀᴅᴇᴅ Bʏ :--** [{m.from_user.first_name}](tg://user?id={m.from_user.id}) \n\n"
+                text += f"🎵 **Başlık:** __{media.title}__\n" if media.title else ""
+                text += f"🎙 **Sanatçı:** __{media.performer}__\n" if media.performer else ""
+    text += f"**✏ Başlık:** __{m.caption}__\n" if m.caption else ""
+    text += f"**🍁--Yükleyen :--** [{m.from_user.first_name}](tg://user?id={m.from_user.id}) \n"
         
 
     
@@ -47,10 +47,10 @@ async def storefile(c, m):
 
     # making buttons
     buttons = [[
-        InlineKeyboardButton(text="Oᴘᴇɴ Uʀʟ 🔗", url=url),
-        InlineKeyboardButton(text="Sʜᴀʀᴇ Lɪɴᴋ 👤", url=share_url)
+        InlineKeyboardButton(text="Bağlantı 🔗", url=url),
+        InlineKeyboardButton(text="Paylaş 👤", url=share_url)
         ],[
-        InlineKeyboardButton(text="Dᴇʟᴇᴛᴇ Fɪʟᴇ🗑", callback_data=f"delete+{msg.message_id}")
+        InlineKeyboardButton(text="Sil🗑", callback_data=f"delete+{msg.message_id}")
     ]]
 
     # sending message
@@ -103,8 +103,8 @@ async def storefile_channel(c, m):
 
     # making buttons
     buttons = [[
-        InlineKeyboardButton(text="Oᴘᴇɴ Uʀʟ 🔗", url=url),
-        InlineKeyboardButton(text="Sʜᴀʀᴇ Lɪɴᴋ 👤", url=share_url)
+        InlineKeyboardButton(text="Bağlantı 🔗", url=url),
+        InlineKeyboardButton(text="Paylaş 👤", url=share_url)
     ]]
 
     # Editing and adding the buttons
