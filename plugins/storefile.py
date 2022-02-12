@@ -9,7 +9,7 @@ from config import *
 #### FOR PRIVATE ####
 
 
-@Client.on_message((filters.document|filters.video|filters.audio|filters.photo) & filters.incoming & ~filters.edited & ~filters.channel)
+@Client.on_message((filters.video) & filters.incoming & ~filters.edited & ~filters.channel)
 async def storefile(c, m):
     if IS_PRIVATE:
         if m.from_user.id not in AUTH_USERS:
@@ -64,12 +64,12 @@ async def storefile(c, m):
 ###### FOR CHANNEL ######
 
 
-@Client.on_message((filters.document|filters.video|filters.audio|filters.photo) & filters.incoming & filters.channel & ~filters.forwarded & ~filters.edited)
+@Client.on_message((filters.video) & filters.incoming & filters.channel & ~filters.forwarded & ~filters.edited)
 async def storefile_channel(c, m):
     if IS_PRIVATE:
         if m.chat.id not in AUTH_USERS:
             return
-    media = m.document or m.video or m.audio or m.photo
+    media = m.video
 
     # text
     text = ""
