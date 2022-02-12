@@ -20,30 +20,28 @@ BATCH = []
 @Client.on_message(filters.command('start') & filters.incoming & filters.private)
 async def start(c, m, cb=False):
     if not cb:
-        send_msg = await m.reply_text("**Pʀᴏᴄᴇssɪɴɢ...**", quote=True)
+        send_msg = await m.reply_text("**İşleniyor...**", quote=True)
 
     owner = await c.get_users(int(OWNER_ID))
     owner_username = owner.username if owner.username else 'AvishkarPatil'
 
     # start text
-    text = f"""**Hᴇʏ!** {m.from_user.mention(style='md')}
+    text = f"""**Merhaba!** {m.from_user.mention(style='md')}
     
-🤗 **I'm FileStoreBot **
+🤗 **Ben @hplatformsdepobot **
 
-‣ Yᴏᴜ ᴄᴀɴ sᴛᴏʀᴇ ʏᴏᴜʀ Tᴇʟᴇɢʀᴀᴍ Mᴇᴅɪᴀ ғᴏʀ ᴘᴇʀᴍᴀɴᴇɴᴛ Lɪɴᴋ! ᴀɴᴅ Sʜᴀʀᴇ Aɴʏᴡʜᴇʀᴇ
+‣ Kalıcı Bağlantı ile Telegram Medyanızı Saklayabilir ve Heryerde Paylaşabilirsiniz.
 
-‣ Cʟɪᴄᴋ ᴏɴ Hᴇʟᴘ ᴀɴᴅ Kɴᴏᴡ Mᴏʀᴇ Aʙᴏᴜᴛ Usɪɴɢ ᴍᴇ
+‣ Daha Fazla Bilgi İçin Yardım Butonuna Basın.
 
-__🚸 Pᴏʀɴ Cᴏɴᴛᴇɴᴛ Nᴏᴛ Aʟʟᴏᴡᴇᴅ Oɴ Tʜᴇ Bᴏᴛ__
-
-**💞 Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ:** {owner.mention(style='md')}
+**💞 Kurucu:** {owner.mention(style='md')}
 """
 
     # Buttons
     buttons = [[
-            InlineKeyboardButton('Hᴇʟᴘ 💡', callback_data="help"),
-            InlineKeyboardButton('Aʙᴏᴜᴛ 👑', callback_data="about")],[
-            InlineKeyboardButton('Mʏ Fᴀᴛʜᴇʀ 👨‍✈️', url=f"https://t.me/{owner_username}"),
+            InlineKeyboardButton('Yardım 💡', callback_data="help"),
+            InlineKeyboardButton('Bilgi 👑', callback_data="about")],[
+            InlineKeyboardButton('Geliştirici 👨‍✈️', url=f"https://t.me/{owner_username}"),
         ]]
 
     # when button home is pressed
@@ -66,14 +64,14 @@ __🚸 Pᴏʀɴ Cᴏɴᴛᴇɴᴛ Nᴏᴛ Aʟʟᴏᴡᴇᴅ Oɴ Tʜᴇ Bᴏᴛ__
 
             if string.empty:
                 owner = await c.get_users(int(OWNER_ID))
-                return await m.reply_text(f"🥴 Sᴏʀʀʏ ʙʀᴏ ʏᴏᴜʀ ғɪʟᴇ ᴡᴀs ᴅᴇʟᴇᴛᴇᴅ ʙʏ ғɪʟᴇ ᴏᴡɴᴇʀ ᴏʀ ʙᴏᴛ ᴏᴡɴᴇʀ\n\nFᴏʀ ᴍᴏʀᴇ ʜᴇʟᴘ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴏᴡɴᴇʀ👉 {owner.mention(style='md')}")
+                return await m.reply_text(f"Üzgünüm Dostum Dosya Siz veya Bot Sahibi Tarafından Silinmiş.\n\nİletişim👉 {owner.mention(style='md')}")
             message_ids = (await decode(string.text)).split('-')
             for msg_id in message_ids:
                 msg = await c.get_messages(int(chat_id), int(msg_id)) if not DB_CHANNEL_ID else await c.get_messages(int(DB_CHANNEL_ID), int(msg_id))
 
                 if msg.empty:
                     owner = await c.get_users(int(OWNER_ID))
-                    return await m.reply_text(f"🥴 Sᴏʀʀʏ ʙʀᴏ ʏᴏᴜʀ ғɪʟᴇ ᴡᴀs ᴅᴇʟᴇᴛᴇᴅ ʙʏ ғɪʟᴇ ᴏᴡɴᴇʀ ᴏʀ ʙᴏᴛ ᴏᴡɴᴇʀ\n\nFᴏʀ ᴍᴏʀᴇ ʜᴇʟᴘ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴏᴡɴᴇʀ👉 {owner.mention(style='md')}")
+                    return await m.reply_text(f"Üzgünüm Dostum Dosya Siz veya Bot Sahibi Tarafından Silinmiş.\n\nİletişim👉 {owner.mention(style='md')}")
 
                 await msg.copy(m.from_user.id)
                 await asyncio.sleep(1)
@@ -83,7 +81,7 @@ __🚸 Pᴏʀɴ Cᴏɴᴛᴇɴᴛ Nᴏᴛ Aʟʟᴏᴡᴇᴅ Oɴ Tʜᴇ Bᴏᴛ__
         msg = await c.get_messages(int(chat_id), int(msg_id)) if not DB_CHANNEL_ID else await c.get_messages(int(DB_CHANNEL_ID), int(msg_id))
 
         if msg.empty:
-            return await send_msg.edit(f"🥴 Sᴏʀʀʏ ʙʀᴏ ʏᴏᴜʀ ғɪʟᴇ ᴡᴀs ᴅᴇʟᴇᴛᴇᴅ ʙʏ ғɪʟᴇ ᴏᴡɴᴇʀ ᴏʀ ʙᴏᴛ ᴏᴡɴᴇʀ\n\nFᴏʀ ᴍᴏʀᴇ ʜᴇʟᴘ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴏᴡɴᴇʀ 👉 {owner.mention(style='md')}")
+            return await send_msg.edit(f"Üzgünüm Dostum Dosya Siz veya Bot Sahibi Tarafından Silinmiş.\n\nİletişim👉 {owner.mention(style='md')}")
         
         caption = f"{msg.caption.markdown}\n\n\n" if msg.caption else ""
         as_uploadername = (await get_data(str(chat_id))).up_name
@@ -91,15 +89,15 @@ __🚸 Pᴏʀɴ Cᴏɴᴛᴇɴᴛ Nᴏᴛ Aʟʟᴏᴡᴇᴅ Oɴ Tʜᴇ Bᴏᴛ__
         if as_uploadername:
             if chat_id.startswith('-100'):
                 channel = await c.get_chat(int(chat_id))
-                caption += "\n\n\n**--Uᴘʟᴏᴀᴅᴇʀ Dᴇᴛᴀɪʟs:--**\n\n"
-                caption += f"**📢 Cʜᴀɴɴᴇʟ Nᴀᴍᴇ:** __{channel.title}__\n\n"
-                caption += f"**🗣 Usᴇʀ Nᴀᴍᴇ:** @{channel.username}\n\n" if channel.username else ""
-                caption += f"**👤 Cʜᴀɴɴᴇʟ Iᴅ:** __{channel.id}__\n\n"
+                caption += "\n\n\n**--Yükleme Detayı:--**\n\n"
+                caption += f"**📢 Kanal Adı:** __{channel.title}__\n\n"
+                caption += f"**🗣 Kanal Kullanıcı Adı:** @{channel.username}\n\n" if channel.username else ""
+                caption += f"**👤 Kanal ID:** __{channel.id}__\n\n"
             else:
                 user = await c.get_users(int(chat_id)) 
-                caption += "\n\n\n**--Uᴘʟᴏᴀᴅᴇʀ Dᴇᴛᴀɪʟs:--**\n\n"
-                caption += f"**🍁 Nᴀᴍᴇ:** [{user.from_user.first_name}](tg://user?id={user.from_user.id})\n\n"
-                caption += f"**🖋 Usᴇʀ Nᴀᴍᴇ:** @{user.username}\n\n" if user.username else ""
+                caption += "\n\n\n**--Yükleme Detayı:--**\n\n"
+                caption += f"**🍁 Ad:** [{user.from_user.first_name}](tg://user?id={user.from_user.id})\n\n"
+                caption += f"**🖋 Kullanıcı Adı:** @{user.username}\n\n" if user.username else ""
 
 
         await send_msg.delete()
@@ -131,7 +129,7 @@ async def me(c, m):
 
 @Client.on_message(filters.command('batch') & filters.private & filters.incoming)
 async def batch(c, m):
-    """ Tʜɪs ɪs ғᴏʀ ʙᴀᴛᴄʜ ᴄᴏᴍᴍᴀɴᴅ"""
+    """Bu Toplu Komut İçindir"""
     if IS_PRIVATE:
         if m.from_user.id not in AUTH_USERS:
             return
